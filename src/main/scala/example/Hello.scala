@@ -23,6 +23,11 @@ object Benchmark {
       val srcs = g.generateScalaSrcs()
       GetTimings.runScalac(srcs)
     }
+    val bloopTimings = for(i <- runSeq) yield {
+      val g = new GenerateSrcs(filesCount = 100 * i, methodsPerClass = 100)
+      val srcs = g.generateScalaSrcs()
+      GetTimings.runBloop(srcs)
+    }
     val javacTimings = for (i <- runSeq) yield {
       val g = new GenerateSrcs(filesCount = 100*i, methodsPerClass = 100)
       val srcs = g.generateJavaSrcs()
@@ -31,6 +36,7 @@ object Benchmark {
     println(s"dotc,${dotcTimings.mkString(",")}")
     println(s"scalac,${scalacTimings.mkString(",")}")
     println(s"javac,${javacTimings.mkString(",")}")
+    println(s"bloop,${bloopTimings.mkString(",")}")
   }
 }
 
@@ -93,6 +99,10 @@ object GetTimings {
     }
   }
 
+  def runBloop(srcs: Files): Double = {
+    timedRun(s"bloop compile my-project --incremental=false")
+  }
+
   def runDotc(srcs: Files): Double = {
     File.temporaryDirectory() { tmpDir =>
       timedRun(s"dotc -d $tmpDir ${srcs.mkString(" ")}")
@@ -101,7 +111,7 @@ object GetTimings {
 
   def runAndReturnStdErr(cmd: String): Seq[String] = {
     val stderr = scala.collection.mutable.Buffer.empty[String]
-    cmd ! ProcessLogger(_ => println, stderr append _)
+    cmd ! ProcessLogger(_ => (), stderr append _)
     stderr.foreach(println)
     println("--")
     stderr

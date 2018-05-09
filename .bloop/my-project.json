@@ -1,0 +1,84 @@
+{
+    "version" : "1.0.0",
+    "project" : {
+        "name" : "my-project",
+        "directory" : "/Users/martin/Documents/Projects.nosync/gkossakowski/javac-dottyc-scalac-bench",
+        "sources" : [
+            "/Users/martin/Documents/Projects.nosync/gkossakowski/javac-dottyc-scalac-bench/target/scala_srcs"
+        ],
+        "dependencies" : [
+        ],
+        "classpath" : [
+            "/Users/martin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.6/scala-library-2.12.6.jar"
+        ],
+        "classpathOptions" : {
+            "bootLibrary" : true,
+            "compiler" : false,
+            "extra" : false,
+            "autoBoot" : true,
+            "filterLibrary" : true
+        },
+        "out" : "/Users/martin/Documents/Projects.nosync/gkossakowski/javac-dottyc-scalac-bench/.bloop/my-project",
+        "classesDir" : "/Users/martin/Documents/Projects.nosync/gkossakowski/javac-dottyc-scalac-bench/.bloop/my-project/scala-2.12/classes",
+        "scala" : {
+            "organization" : "org.scala-lang",
+            "name" : "scala-compiler",
+            "version" : "2.12.6",
+            "options" : [
+            ],
+            "jars" : [
+                "/Users/martin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.12.6/scala-compiler-2.12.6.jar",
+                "/Users/martin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.12.6/scala-reflect-2.12.6.jar",
+                "/Users/martin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/modules/scala-xml_2.12/1.0.6/scala-xml_2.12-1.0.6.jar",
+                "/Users/martin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/jline/jline/2.14.6/jline-2.14.6.jar",
+                "/Users/martin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.6/scala-library-2.12.6.jar"
+            ]
+        },
+        "jvm" : {
+            "home" : "/Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home/jre",
+            "options" : [
+            ]
+        },
+        "java" : {
+            "options" : [
+            ]
+        },
+        "test" : {
+            "frameworks" : [
+                {
+                    "names" : [
+                        "org.scalacheck.ScalaCheckFramework"
+                    ]
+                },
+                {
+                    "names" : [
+                        "org.specs2.runner.Specs2Framework",
+                        "org.specs2.runner.SpecsFramework"
+                    ]
+                },
+                {
+                    "names" : [
+                        "org.specs.runner.SpecsFramework"
+                    ]
+                },
+                {
+                    "names" : [
+                        "org.scalatest.tools.Framework",
+                        "org.scalatest.tools.ScalaTestFramework"
+                    ]
+                },
+                {
+                    "names" : [
+                        "com.novocode.junit.JUnitFramework"
+                    ]
+                }
+            ],
+            "options" : {
+                "excludes" : [
+                ],
+                "arguments" : [
+                ]
+            }
+        }
+    }
+}
